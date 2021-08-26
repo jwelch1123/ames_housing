@@ -89,14 +89,15 @@ Finally the target variable SalePrice was also encoded with the PowerTransformer
 
 In order to avoid issues with multicollinearity, I constructed multiple feature sets, using mutual information with the SalePrice. This provided 5 feature lists, top 10%, top 20%, top 35%, features with non-zero mutual information, and the full feature set. 
 
-Another step to avoiding multicollinearity was only selecting models with strong penalization functions. I used the following models
-    - Lasso
-    - Ridge
-    - ElasticNet
-    - SVR
-    - RandomForest
-    - GradientBoost
-    - XGBoost
+Another step to avoiding multicollinearity was only selecting models with strong penalization functions. I used the following models:
+
+- Lasso
+- Ridge
+- ElasticNet
+- SVR
+- RandomForest
+- GradientBoost
+- XGBoost
 
 
 Before training the data was split 2:1 into training and validation data (I am using validation instead of test because the kaggle competition provides a test.csv)
