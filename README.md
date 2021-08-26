@@ -33,14 +33,14 @@ We can use all of these features to predict the Sale Price of the home. Predicti
 ## Data Preparation
 Before training a model on the data it needs to be cleaned, engineered, and standardized.
 
-1. Outliers
+**1. Outliers**
 
 Outliers can severly effect how a model estimates coefficients and determines what is important. Some outliers are easy to find such as the one home with non-standard Utilities. Other outliers are more open to interpretation. Above Ground Living Area includes two values at ~4500 and ~5600 square feet which are clearly outliers when GrLivArea is plotted against Sale Price. Another two sales appear appropriately priced for their square footage but also represent a large z-score and were removed. Similar to GrLivArea, LotArea shows several extreme outliers with several sales having lot areas greater than 100,000 square feet (2+ acres!). These four lots were removed from the training data. 
 
 In total, 9 sales were removed from the data set, less than 1% of the total training data. 
 
 
-2. Null Values
+**2. Null Values**
 
 On first glance the data appears to be full of missing values. All but 7 values are missing from PoolQC, many houses are missing information about their basements, garages, alleys, and fences. However, by examining the provided data key it becomes obvious that most of these missing values are intentional. Most PoolQC values are null because most houses lack a pool. The same is true for basements, garages, fences, and alleys. 
 
@@ -49,13 +49,13 @@ When this intentional missingness is corrected only three features display missi
 Electrical was imputed with the mode of the feature. MasVnrType was imputed to "None". LotFrontage was imputed by the intersection of Neighborhood and LotConfig. This is based on the planned nature of mid-west towns. Most construction follows a top-down approach leaving features like LotArea & LotFrontage standardized across Neighborhoods. The LotConfig supplies important information as well, a house on a cul-de-sac has much less frontage than a house on a corner lot. 
 
 
-3. Data Types and Misspellings
+**3. Data Types and Misspellings**
 
 Some features which appear as numbers are actually categories, MSSubClass appears as a number but actually represents discrete categories. 
 
 Additionally, the Exterior2nd features includes misspelled materials. "CmentBd" should be "CemntBd"
 
-4. Feature Engineering
+**4. Feature Engineering**
 
 For basement and Proch features I pivoted the data. 
 
@@ -69,7 +69,7 @@ Optionally, Condition1/2 (proximity to roads/railroads/parks) and Exterior1st/2n
 
 
 
-5. Model Preparation for Models
+**5. Model Preparation for Models**
 
 For the models to make sense of the data, they need to be in specific format. For both linear & tree based models, all ordinal features were encoded None->Excellent as 0->5. 
 
