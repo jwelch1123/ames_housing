@@ -1,7 +1,7 @@
 # ames_housing
 Analysis and price prediction of the Ames Housing Prices data set.
 
-[Blog Post](https://nycdatascience.com/blog/author/james-welch/)
+[Blog Post](https://nycdatascience.com/blog/student-works/what-to-buy-how-to-sell-ames-ml)
 
 ## Purpose
 
